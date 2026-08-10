@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="de" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#090b18">
+  <meta name="description" content="DeutschSchatzkiste – drei interaktive B2-Spiele für Sprechen, Redemittel und Sprachwissen.">
+  <title>DeutschSchatzkiste</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip" href="#spiele">Zu den Spielen</a>
+  <header class="topbar">
+    <a class="brand" href="#start" aria-label="DeutschSchatzkiste – Startseite">
+      <span class="brand-gem" aria-hidden="true"></span>
+      <span>Deutsch<b>Schatzkiste</b></span>
+    </a>
+    <nav class="controls" aria-label="Einstellungen">
+      <button class="icon-button" id="themeButton" type="button" aria-label="Helles Design einschalten"><span class="theme-icon" aria-hidden="true"></span></button>
+      <button class="icon-button" id="soundButton" type="button" aria-label="Ton ausschalten"><span class="speaker-icon" aria-hidden="true"></span></button>
+    </nav>
+  </header>
+
+  <main id="start">
+    <section class="intro" aria-labelledby="title">
+      <p class="kicker">DEUTSCH LERNEN · SPIELERISCH · B2</p>
+      <h1 id="title">Drei Welten.<br><em>Eine Sprache.</em></h1>
+      <p class="lead">Trainiere freies Sprechen, sichere Redemittel und anspruchsvolles Sprachwissen – in deinem Tempo und ohne Anmeldung.</p>
+      <a class="discover" href="#spiele">Spiele entdecken <span aria-hidden="true">↓</span></a>
+    </section>
+
+    <section class="games" id="spiele" aria-labelledby="gamesTitle">
+      <div class="section-heading">
+        <div><p class="kicker">DEINE SPIELESAMMLUNG</p><h2 id="gamesTitle">Wähle dein Training</h2></div>
+        <p>Jede Welt trainiert eine andere sprachliche Stärke.</p>
+      </div>
+
+      <div class="cards">
+        <article class="game-card pecha">
+          <div class="card-image"><img src="assets/images/pecha-kucha.jpg" alt="Gesprächsrunde über einer abendlichen Stadt"><span class="level">B2 · SPRECHEN</span></div>
+          <div class="card-body">
+            <div class="game-logo logo-pecha"><span>PECHA</span><b>KUCHA</b><small>DEUTSCH</small></div>
+            <p>Sprich zu einem Thema und baue alle 20 Sekunden ein neues Redemittel ein. Ein temporeiches Training für spontanes Sprechen.</p>
+            <ul><li>20 Redemittel</li><li>Automatischer Timer</li><li>Solo oder gemeinsam</li></ul>
+            <a class="play-button" href="https://irtschik913.github.io/PechaKucha/" data-game="Pecha Kucha">Spielen <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+
+        <article class="game-card bowling">
+          <div class="card-image"><img src="assets/images/bowling-allee.jpg" alt="Elegante Bowlingbahn mit warmem Licht"><span class="level">B2 · REDEMITTEL</span></div>
+          <div class="card-body">
+            <div class="game-logo logo-bowling"><span>BOWLING</span><b>ALLEE</b></div>
+            <p>Ergänze Redemittel, bring die Kegel zu Fall und sammle besondere Bowlingbälle. Präzision auf der Bahn und in der Sprache.</p>
+            <ul><li>60 Redemittel</li><li>Strike und Spare</li><li>Persönliche Sammlung</li></ul>
+            <a class="play-button" href="https://irtschik913.github.io/Bowling-Allee/" data-game="Bowling-Allee">Spielen <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+
+        <article class="game-card tower">
+          <div class="card-image"><img src="assets/images/wissensturm.jpg" alt="Nächtliche Wissenslandschaft mit Schlössern und Bergen"><span class="level">B2 · SPRACHWISSEN</span></div>
+          <div class="card-body">
+            <div class="game-logo logo-tower"><span>WISSENS</span><b>TURM</b></div>
+            <p>Errichte fünf Etagen aus Grammatik, Wortschatz und Sprachgebrauch. Jeder richtige Wissensstein macht deinen Turm stärker.</p>
+            <ul><li>120 Aufgaben</li><li>6 Aufgabenformate</li><li>Eigener Editor</li></ul>
+            <a class="play-button" href="https://irtschik913.github.io/Wissensturm/" data-game="Wissensturm">Spielen <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Mehr Deutsch, Ideen und Materialien</p>
+    <a class="vk-link" href="https://vk.ru/deutschschatzkiste" target="_blank" rel="noopener noreferrer"><span class="vk-mark" aria-hidden="true">VK</span> DeutschSchatzkiste auf VK</a>
+    <small>Mit Freude Deutsch lernen.</small>
+  </footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
