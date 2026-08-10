@@ -28,3 +28,13 @@ body{background:linear-gradient(rgba(5,8,20,.42),rgba(5,8,20,.84)),url('../asset
 .discover span{display:inline-block;transition:transform .25s}.discover:hover span{transform:translateY(5px)}.vk-mark{transition:transform .28s}.vk-link:hover .vk-mark{transform:rotate(-8deg) scale(1.1)}
 @keyframes logoRise{0%{transform:translateY(0)}55%{transform:translateY(-6px)}100%{transform:translateY(-3px)}}
 @media(max-width:650px){body{background-attachment:scroll;background-position:center top}.intro>*{min-width:0;max-width:100%}.intro h1{width:100%;font-size:clamp(37px,10.8vw,43px)}.intro .lead{width:100%;font-size:16px}.games::before{inset:1% -10px -1%;border-radius:24px}.game-card:hover,.game-card.pecha:hover,.game-card.bowling:hover,.game-card.tower:hover{transform:translateY(-4px)}}
+
+/* Object-focused card crops: no empty editorial negative space. */
+.pecha .card-image>img{object-position:78% 72%;transform:scale(1.28)}
+.bowling .card-image>img{object-position:82% 58%;transform:scale(1.34)}
+.tower .card-image>img:first-child{object-position:center;transform:scale(1.08)}
+.tower .card-image .tower-figure{position:absolute;z-index:1;left:50%;bottom:-21%;width:48%;height:126%;object-fit:contain;filter:drop-shadow(0 14px 16px rgba(0,0,0,.65));transform:translateX(-50%);transform-origin:50% 80%}
+.pecha:hover .card-image>img{transform:scale(1.34) translateX(-1%)}
+.bowling:hover .card-image>img{transform:scale(1.41) translateY(-1%)}
+.tower:hover .card-image>img:first-child{transform:scale(1.12)}
+.tower:hover .card-image .tower-figure{transform:translateX(-50%) translateY(-3%) scale(1.04);filter:drop-shadow(0 18px 22px rgba(50,206,238,.34))}
