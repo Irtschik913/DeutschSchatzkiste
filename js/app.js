@@ -20,7 +20,7 @@ function unlock(){
   if(!context){
     const AudioApi=window.AudioContext||window.webkitAudioContext;
     if(!AudioApi)return;
-    context=new AudioApi();master=context.createGain();master.gain.value=sound?.24:0;master.connect(context.destination);
+    context=new AudioApi();master=context.createGain();master.gain.value=sound?.24:0;master.connect(context.destination);root.dataset.audioReady="true";
   }
   if(context.state==="suspended")context.resume();
   if(sound&&!musicTimer)startMusic();

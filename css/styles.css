@@ -8,3 +8,23 @@
 
 html,body{overflow-x:hidden}
 @media(max-width:650px){.intro .kicker{max-width:100%;font-size:9px;letter-spacing:.13em}.intro h1{max-width:100%;font-size:clamp(43px,13.5vw,54px)}}
+
+/* Portal world background */
+body{background:linear-gradient(rgba(5,8,20,.42),rgba(5,8,20,.84)),url('../assets/images/portal-library.jpg') center top/cover fixed no-repeat,var(--bg)}
+[data-theme="light"] body{background:linear-gradient(rgba(250,245,233,.55),rgba(244,239,229,.8)),url('../assets/images/portal-library.jpg') center top/cover fixed no-repeat,var(--bg)}
+.intro h1{text-shadow:0 8px 35px rgba(0,0,0,.32)}[data-theme="light"] .intro h1{text-shadow:0 5px 28px rgba(255,255,255,.74)}
+.games{position:relative}.games::before{content:"";position:absolute;z-index:-1;inset:2% -6% -2%;border:1px solid var(--line);border-radius:42px;background:color-mix(in srgb,var(--bg) 80%,transparent);backdrop-filter:blur(15px)}
+
+/* Brighter artwork and individual hover personalities */
+.card-image::after{background:linear-gradient(180deg,transparent 64%,rgba(5,8,18,.72) 100%)}
+.card-image img{filter:saturate(1.08) brightness(1.06)}
+.game-card.pecha:hover{transform:translateY(-10px) rotate(-.55deg)}.game-card.bowling:hover{transform:translateY(-12px) scale(1.012)}.game-card.tower:hover{transform:translateY(-10px) rotate(.55deg)}
+.pecha:hover .card-image img{transform:scale(1.07) translateX(1%)}.bowling:hover .card-image img{transform:scale(1.075) translateY(-1.5%)}.tower:hover .card-image img{transform:scale(1.07) translateX(-1%)}
+.game-card:hover .level{transform:translateY(-2px);box-shadow:0 0 20px rgba(83,214,231,.27)}
+.game-card:hover .game-logo{animation:logoRise .48s ease both}.game-card li{transition:transform .2s,background .2s}.game-card:hover li{transform:translateY(-2px);background:rgba(127,138,180,.18)}
+.play-button{position:relative;overflow:hidden}.play-button::before{content:"";position:absolute;inset:0;transform:translateX(-120%);background:linear-gradient(100deg,transparent,rgba(255,255,255,.35),transparent);transition:transform .55s}.play-button:hover::before{transform:translateX(120%)}.play-button span{transition:transform .22s}.play-button:hover span{transform:translateX(6px)}
+.brand-gem{transition:transform .35s,box-shadow .35s}.brand:hover .brand-gem{transform:rotate(135deg) scale(1.06);box-shadow:0 0 34px rgba(83,214,231,.65)}
+.icon-button .theme-icon,.icon-button .speaker-icon{transition:transform .3s}.icon-button:hover .theme-icon{transform:rotate(180deg)}.icon-button:hover .speaker-icon{transform:scale(1.12)}
+.discover span{display:inline-block;transition:transform .25s}.discover:hover span{transform:translateY(5px)}.vk-mark{transition:transform .28s}.vk-link:hover .vk-mark{transform:rotate(-8deg) scale(1.1)}
+@keyframes logoRise{0%{transform:translateY(0)}55%{transform:translateY(-6px)}100%{transform:translateY(-3px)}}
+@media(max-width:650px){body{background-attachment:scroll;background-position:center top}.intro>*{min-width:0;max-width:100%}.intro h1{width:100%;font-size:clamp(37px,10.8vw,43px)}.intro .lead{width:100%;font-size:16px}.games::before{inset:1% -10px -1%;border-radius:24px}.game-card:hover,.game-card.pecha:hover,.game-card.bowling:hover,.game-card.tower:hover{transform:translateY(-4px)}}
