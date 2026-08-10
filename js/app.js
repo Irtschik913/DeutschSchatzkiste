@@ -14,11 +14,13 @@ function apply(){
   themeButton.setAttribute("aria-label",theme==="dark"?"Helles Design einschalten":"Dunkles Design einschalten");
   soundButton.classList.toggle("sound-off",!sound);
   soundButton.setAttribute("aria-label",sound?"Ton ausschalten":"Ton einschalten");
-  if(master)master.gain.setTargetAtTime(sound?.11:0,context.currentTime,.08);
+  if(master)master.gain.setTargetAtTime(sound?.24:0,context.currentTime,.08);
 }
 function unlock(){
   if(!context){
-    context=new AudioContext();master=context.createGain();master.gain.value=sound?.11:0;master.connect(context.destination);
+    const AudioApi=window.AudioContext||window.webkitAudioContext;
+    if(!AudioApi)return;
+    context=new AudioApi();master=context.createGain();master.gain.value=sound?.24:0;master.connect(context.destination);
   }
   if(context.state==="suspended")context.resume();
   if(sound&&!musicTimer)startMusic();
@@ -30,8 +32,8 @@ function clickSound(){tone(420,.07,.13,"sine");tone(680,.1,.08,"sine",.035)}
 function hoverSound(){tone(310,.045,.035,"sine")}
 function startMusic(){
   const notes=[146.83,174.61,220,196,164.81,220,246.94,196];nextNote=0;
-  const play=()=>{if(!sound||!context)return;const f=notes[nextNote++%notes.length];tone(f,2.8,.028,"sine");tone(f*2,2.1,.012,"triangle",.08)};
-  play();musicTimer=setInterval(play,1850);
+  const play=()=>{if(!sound||!context)return;const f=notes[nextNote++%notes.length];tone(f,2.8,.075,"sine");tone(f*2,2.1,.035,"triangle",.08)};
+  musicTimer=setInterval(play,1850);play();
 }
 function showToast(text){toast.textContent=text;toast.classList.add("show");clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove("show"),1700)}
 
@@ -40,7 +42,7 @@ soundButton.addEventListener("click",()=>{unlock();sound=!sound;localStorage.set
 document.addEventListener("pointerdown",()=>unlock(),{once:true});
 document.querySelectorAll(".play-button").forEach(link=>{
   link.addEventListener("pointerenter",hoverSound);
-  link.addEventListener("click",event=>{if(!sound)return;event.preventDefault();clickSound();showToast(`${link.dataset.game} wird geöffnet …`);setTimeout(()=>location.href=link.href,360)});
+  link.addEventListener("click",()=>clickSound());
 });
 document.querySelectorAll(".icon-button,.discover,.vk-link").forEach(item=>item.addEventListener("pointerenter",hoverSound));
 apply();
